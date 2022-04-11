@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+}
+
+.content {
+    margin: auto;
+}
+
+.grid-container {
+    width: 500px;
+    height: 500px;
+    display: grid;
+    border: 4px solid black;
+    margin-bottom: 20px;
+    background-color: white;
+}
