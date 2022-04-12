@@ -2,10 +2,12 @@ const grid = document.querySelector('.grid-container');
 const resetButton = document.querySelector('.reset');
 const eraserButton = document.querySelector('.eraser');
 const colorPicker = document.querySelector('#colorPicker');
+const sizeSlider = document.querySelector('#sizeSlider');
 
 let click = false;
 let tool = 'pencil';
 let color = 'black';
+
 
 function setupSketchPad(size) {
 
@@ -26,15 +28,23 @@ function setupSketchPad(size) {
 
     colorPicker.addEventListener('click', () => tool = 'pencil');
     eraserButton.addEventListener('click', () => tool = 'eraser');
-    resetButton.addEventListener('click', () => {
-        tool = 'reset'
-        useTool();
-    });
-    colorPicker.addEventListener("input", () => color = colorPicker.value)
+    colorPicker.addEventListener("input", () => color = colorPicker.value);
+    resetButton.addEventListener('click', () => resetBoard());
 
 }
 
-setupSketchPad(16)
+function SetGridSize(){
+    //forEach div in grid, remove all, then set new value to grid
+    grid.querySelectorAll("div").forEach(eachDiv => eachDiv.remove());
+    setupSketchPad(sizeSlider.value);
+}
+
+function resetBoard() {
+    //forEach div in grid, add white to whole grid
+    let allSquares = grid.querySelectorAll("div");
+    allSquares.forEach(eachDiv => eachDiv.style.backgroundColor = 'white');
+}
+
 
 function useTool(e) {
     if (click === true) {
@@ -43,9 +53,8 @@ function useTool(e) {
         } else if (tool === 'eraser') {
             e.target.style.backgroundColor = 'white';
         }
-    }else if (tool === 'reset') {
-        //forEach div in grid, add white to whole grid
-        let allSquares = grid.querySelectorAll("div");
-        allSquares.forEach(eachDiv => eachDiv.style.backgroundColor = 'white');
     }
 }
+
+sizeSlider.addEventListener('click', SetGridSize);
+setupSketchPad(sizeSlider.value);
