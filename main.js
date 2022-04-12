@@ -8,32 +8,20 @@ function setupSketchPad(size) {
 
     for(let i = 0; i < (size * size); i++) {
         let square = document.createElement('div');
-        square.addEventListener('mouseover', colorChanger);
+        square.addEventListener('mouseover', checkMouse);
+        square.addEventListener('mouseup', () => click = false );
+        square.addEventListener('mousedown', (e) => {
+            click = true;
+            checkMouse(e);
+        });
         grid.insertAdjacentElement('beforeend', square);
     }
 }
 
-
 setupSketchPad(16);
 
-
-function colorChanger() {
-    document.querySelector('body').addEventListener('mousedown', ()=> click = true)
-    document.querySelector('body').addEventListener('mouseup', () => click = false )
+function checkMouse(e) {
     if (click === true) {
-        this.style.backgroundColor = 'black';
+        e.target.style.backgroundColor = 'black';
     }
 }
-
-//check if mouse is clicked AND mouseover
-// if true, start drawing
-
-/*
-
-
-document.querySelector('body').addEventListener('click', ()=>{
-    //if click = true set to false
-    //if click = false set to true
-    click = !click;
-})
-*/
