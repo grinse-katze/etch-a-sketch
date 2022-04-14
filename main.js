@@ -29,7 +29,7 @@ function setupSketchPad(size) {
 
     colorPicker.addEventListener('click', () => tool = 'pencil');
     eraserButton.addEventListener('click', () => tool = 'eraser');
-    colorPicker.addEventListener("input", () => color = colorPicker.value);
+    colorPicker.addEventListener('input', () => color = colorPicker.value);
     rainbowButton.addEventListener('click', () => tool = 'rainbow');
 }
 

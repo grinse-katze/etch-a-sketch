@@ -13,14 +13,16 @@
     </head>
     
     <body>
+        <h1>Etch-a-sketch</h1>
         <div class="content">
-            <h1>Etch-a-sketch</h1>
+            <div class="button-container">
+                <div class="color"><input id="colorPicker" type="color" value="#000000"></div>
+                <button class="rainbow-button">Rainbow Mode</button>   
+                <button class="eraser">Eraser</button>
+                <button class="reset">Reset</button>
+                <input id="sizeSlider" type="range" value="16" min="6" max="64">
+            </div>
             <div class="grid-container"></div>
-            <input id="colorPicker" type="color" value="#000000">
-            <button class="rainbow-button">Rainbow Mode</button>   
-            <button class="eraser">Eraser</button>
-            <button class="reset">Reset</button>
-            <input id="sizeSlider" type="range" value="16" min="6" max="64">
         </div>
     </body>
     <script src="main.js"></script>
