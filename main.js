@@ -3,6 +3,7 @@ const resetButton = document.querySelector('.reset');
 const eraserButton = document.querySelector('.eraser');
 const colorPicker = document.querySelector('#colorPicker');
 const sizeSlider = document.querySelector('#sizeSlider');
+const rainbowButton = document.querySelector('.rainbow-button');
 
 let click = false;
 let tool = 'pencil';
@@ -29,20 +30,13 @@ function setupSketchPad(size) {
     colorPicker.addEventListener('click', () => tool = 'pencil');
     eraserButton.addEventListener('click', () => tool = 'eraser');
     colorPicker.addEventListener("input", () => color = colorPicker.value);
-    resetButton.addEventListener('click', () => resetBoard());
-
-}
-
-function SetGridSize(){
-    //forEach div in grid, remove all, then set new value to grid
-    grid.querySelectorAll("div").forEach(eachDiv => eachDiv.remove());
-    setupSketchPad(sizeSlider.value);
+    rainbowButton.addEventListener('click', () => tool = 'rainbow');
 }
 
 function resetBoard() {
-    //forEach div in grid, add white to whole grid
-    let allSquares = grid.querySelectorAll("div");
-    allSquares.forEach(eachDiv => eachDiv.style.backgroundColor = 'white');
+    //forEach div in grid, remove all, then set new/current size value to grid
+    grid.querySelectorAll("div").forEach(eachDiv => eachDiv.remove());
+    setupSketchPad(sizeSlider.value);
 }
 
 
@@ -52,9 +46,14 @@ function useTool(e) {
             e.target.style.backgroundColor = color;
         } else if (tool === 'eraser') {
             e.target.style.backgroundColor = 'white';
+        } else if (tool === 'rainbow') {
+            let randColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            e.target.style.backgroundColor = randColor;
         }
     }
 }
 
-sizeSlider.addEventListener('click', SetGridSize);
+resetButton.addEventListener('click', resetBoard);
+sizeSlider.addEventListener('click', resetBoard);
+
 setupSketchPad(sizeSlider.value);
