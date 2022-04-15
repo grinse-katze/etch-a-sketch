@@ -1,10 +1,7 @@
 body{
-    margin: 0;
     font-family: Calibri, Arial, Helvetica, sans-serif;
-    height: 100vh;
     display: flex;
     justify-content: center;
-    margin-top: 0;
     background-size: 25px 25px;
     background-image:
         linear-gradient(to right, rgb(227, 227, 227) 1px, transparent 1px),
@@ -13,14 +10,13 @@ body{
 
 h1 {
     text-align: center;
-    font-family: 'Amatic SC';
     font-size: 60px;
+    font-family: 'Amatic SC';
 }
 
 .content {
     display: flex;
     min-width: 400px;
-    margin-bottom: 80px;
 }
 
 .header-grid {
@@ -37,8 +33,7 @@ h1 {
 }
 
 .button-container {
-    min-width: 180px;
-    max-width: 220px;
+    max-width: 230px;
     align-self: center;
 }
 
@@ -46,7 +41,6 @@ button:hover {
     background-color: rgb(205, 152, 27);
     color: white;
     border: 1px solid white;
-    border-radius: 8px;
 }
 
 button, 
