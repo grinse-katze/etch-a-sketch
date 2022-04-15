@@ -1,20 +1,27 @@
 body{
     font-family: Calibri, Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    height: 100vh;
 }
 
 h1 {
     text-align: center;
     font-family: 'Amatic SC';
     font-size: 60px;
-    margin-left: 100px;
 }
 
 .content {
     display: flex;
 }
 
+.header-grid {
+    align-self: center;
+}
+
 .grid-container {
-    margin: auto;
     width: 500px;
     height: 500px;
     display: grid;
@@ -25,15 +32,13 @@ h1 {
 }
 
 .button-container {
-    max-width: 180px;
-    margin-left: 50px;
-    margin: auto;
-    padding-left: 20px;
+    max-width: 200px;
+    align-self: center;
 }
 
 button, 
 input {
-    margin-bottom: 18px;
+    margin-top: 20px;
     width: 150px;
     height: 50px;
     cursor: pointer;
@@ -46,7 +51,7 @@ input {
     height: 70px;
     border-radius: 50px;
     overflow: hidden;
-    margin-bottom: 18px;
+    margin-top: 20px;
     margin-left: 40px;
   }
   
