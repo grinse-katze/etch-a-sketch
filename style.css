@@ -45,7 +45,6 @@ button:hover {
     color: white;
     border: 1px solid white;
     border-radius: 8px;
-    /*box-shadow: 0 0 0 5px rgb(205, 152, 27, 0.3);*/
 }
 
 button, 
@@ -60,12 +59,12 @@ input {
 }
 
 .color {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 50px;
     overflow: hidden;
-    margin-top: 20px;
-    margin-left: 40px;
+    margin-top: 0px;
+    margin-left: 45px;
 }
   
 [type="color"] {
